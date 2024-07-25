@@ -1,8 +1,8 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this.validateString(name, 'Name')
-    this._length = this.validateNumber(length, 'Length')
-    this._students = this.validateArray(students, 'Students')
+    this._name = this.validateString(name, 'Name');
+    this._length = this.validateNumber(length, 'Length');
+    this._students = this.validateArray(students, 'Students');
   }
 
   validateString(value, attribute) {
