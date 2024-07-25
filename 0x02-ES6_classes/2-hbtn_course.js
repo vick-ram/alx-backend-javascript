@@ -5,23 +5,23 @@ export default class HolbertonCourse {
     this._students = this.validateArray(students, 'Students');
   }
 
-  validateString(value, attribute) {
+  static validateString(value, attribute) {
     if (typeof value !== 'string') {
-        throw new TypeError(`${attribute} must be a string`);
-    }
-    return value;
-  }
-    
-  validateNumber(value, attribute) {
-    if (typeof value !== 'number') {
-        throw new TypeError(`${attribute} must be a number`);
+      throw new TypeError(`${attribute} must be a string`);
     }
     return value;
   }
 
-  validateArray(value, attribute) {
+  static validateNumber(value, attribute) {
+    if (typeof value !== 'number') {
+      throw new TypeError(`${attribute} must be a number`);
+    }
+    return value;
+  }
+
+  static validateArray(value, attribute) {
     if (!Array.isArray(value)) {
-        throw new TypeError(`${attribute} must be an array`);
+      throw new TypeError(`${attribute} must be an array`);
     }
     return value;
   }
