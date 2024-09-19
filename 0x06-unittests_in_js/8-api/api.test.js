@@ -10,4 +10,10 @@ describe('Index page', () => {
             done();
         });
     });
+    it('Correct result?', (done) => {
+        request(url, (error, response, body) => {
+            assert.equal(body, 'Welcome to the payment system');
+            done();
+        });
+    });
 });
