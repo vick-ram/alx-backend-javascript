@@ -1,3 +1,6 @@
+const process = require('node:process');
+
+
 console.log('Welcome to Holberton School, what is your name?');
 
 process.stdin.on('data', (data) => {
@@ -11,3 +14,4 @@ process.stdin.on('data', (data) => {
 process.on('exit', () => {
   console.log('This important software is now closing');
 });
+

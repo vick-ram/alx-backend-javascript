@@ -8,6 +8,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to the payment system');
 });
 
+app.get('/cart/:id([0-9]+)', (req, res) => {
+    res.send(`Payment methods for cart ${req.params.id}`);
+});
+
 app.get('/available_payments', (req, res) => {
     res.json({
         payment_methods: {
@@ -17,7 +21,7 @@ app.get('/available_payments', (req, res) => {
     });
 });
 
-app.post('/login', express.json(), (req, res) => {
+app.post('/login', (req, res) => {
     const username = res.body.username;
     res.send(`Welcome ${username}`);
 });

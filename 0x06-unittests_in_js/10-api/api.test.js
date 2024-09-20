@@ -25,6 +25,13 @@ describe('Cart page', () => {
     });
   });
 
+  it('Correct response for cat id', (done) => {
+    request(`${url}/cart/12`, (error, response, body) => {
+      assert.equal(body, 'Payment methods for cart 12');
+      done();
+    });
+  });
+
   it('Correct status code when :id is NOT a number (=> 404)?', (done) => {
     request('http://localhost:7865/cart/hello', (error, response, body) => {
       assert.equal(response.statusCode, 404);
