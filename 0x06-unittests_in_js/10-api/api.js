@@ -3,6 +3,8 @@ const app = express();
 
 const port = 7865;
 
+app.use(express.json());
+
 
 app.get('/', (req, res) => {
     res.send('Welcome to the payment system');
@@ -22,10 +24,16 @@ app.get('/available_payments', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    const username = res.body.username;
-    res.send(`Welcome ${username}`);
+    const {username} = req.body;
+    if (username) {
+        res.send(`Welcome ${username}`);
+    } else {
+        res.status(400).send('UserName is required');
+    }
 });
 
 app.listen(port, () => {
     console.log(`API available on localhost port ${port}`)
 });
+
+module.exports = app;
